@@ -25,7 +25,8 @@ yarn add whatsapp-web-api
     "dev": "nodemon index.js"
   },
   "dependencies": {
-    "whatsapp-web-api": "latest"
+    "whatsapp-web-api": "latest",
+    "chalk": "^4.1.2"
   },
   "devDependencies": {
     "nodemon": "~3.0.1"
@@ -44,8 +45,6 @@ yarn add whatsapp-web-api
 ### ./index.js
 ```javascript
 const wwa = require('whatsapp-web-api');
-const fs = require('fs');
-const chalk = require('chalk');
 const config = require('./config/settings.js');
 const client = require('./includes/client.js');
 
@@ -63,7 +62,7 @@ startServer(config, client);
 ### ./config/settings.js
 ```javascript
 module.exports = {
-  pairing_mode: true,
+  pairing_mode: false,
   session_folder_name: 'session',
   browser: ["Chrome (Linux)"],
   public_mode: true,
